@@ -1,0 +1,22 @@
+get_pid.c = 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <crypt.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#define chemin "/var/tmp/a.out"
+#define binaire "a.out"
+#include <errno.h>
+int main(void)
+{
+        char pid[16];
+        snprintf(pid, sizeof(pid),"%i",getpid());
+        int cpy = atoi(pid) + 1;
+        sprintf(pid, "%d", cpy);
+        char *arg = crypt(pid, "$1$awesome");
+        printf("%s", arg);
+        return 0;
+}
+A compiler en même tan que le ./ch21 pour avoir un pid qui différe d'1. ./ch21 $(/var/tmp/./a.out)
