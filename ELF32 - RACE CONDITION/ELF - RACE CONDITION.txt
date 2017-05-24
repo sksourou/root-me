@@ -1,3 +1,0 @@
-
-cr√er /tmp/tmp_file.txt
-$ chmod +x /tmp/tmp_file.txt & ./ch12 & cat /tmp/tmp_file.txt

@@ -1,5 +1,0 @@
-print octet jusqu'a trouver le buffer
-./ch5 "%08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x"
-							      l--------BUFFER---------------l	
-								 convertion hex to ascii = mdp
-															 							

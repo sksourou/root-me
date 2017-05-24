@@ -1,1 +1,0 @@
-Même logique que le premier /var/tmp/ls = #!/bin/sh

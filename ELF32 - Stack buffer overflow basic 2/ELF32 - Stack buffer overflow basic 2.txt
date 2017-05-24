@@ -1,1 +1,0 @@
-Il faut trouver l adresse de shell() grace a nm. Puis on deborde le buffer jusqu'a arriver sur l'adresse de func() qu'on va remplacer avec celle de shell(). Pour savoir de combien deborder c'est pas tr√s compliqu√© puisque fgets limite a 133. 

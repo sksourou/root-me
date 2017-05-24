@@ -1,5 +1,0 @@
-On vois avc nm que CallMeMaybe = xcd/x06/x40/x00...
-
-Il faut donc remplacer cette valeur par la valeur retour du main. 
-Il faut donc remplir le buffer jusqu'a l'écraser (rip sur gdb).
-
