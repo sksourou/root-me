@@ -1,0 +1,2 @@
+Le binaire écrit le mot de passe dans un fichier temporaire, attend 1/4 de seconde puis détruit le fichier temporaire avant de quitter.
+./ch12 & cat /tmp/tmp_file.txt

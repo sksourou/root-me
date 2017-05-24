@@ -1,0 +1,3 @@
+./ch5 "%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x%08x"
+
+On trouve une string a partir du 24e byte (inverser l'ordre a cause de little indian qui memorise les int a l'envers)

